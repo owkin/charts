@@ -1,0 +1,30 @@
+language: minimal
+
+env:
+  - PACKAGE=pypiserver
+
+branches:
+  only:
+    - master
+
+addons:
+  snaps:
+    - name: helm
+      confinement: classic
+      channel: stable
+
+before_script:
+  - helm init --client-only
+
+script:
+  - helm lint $PACKAGE
+
+after_script:
+  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then git config --global user.email "travis@travis-ci.org"; fi'
+  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then git config --global user.name "Travis CI"; fi'
+  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then git checkout -b gh-pages; fi'
+  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then helm package $1; fi'
+  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then git add .; fi'
+  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"; fi'
+  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then git remote add origin-pages https://${GH_TOKEN}@github.com/Owkin/charts.git > /dev/null 2>&1; fi'
+  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then git push --quiet --set-upstream origin-pages gh-pages; fi'
