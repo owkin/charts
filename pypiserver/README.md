@@ -4,20 +4,28 @@ This chart installs a PyPI server
 
 ## Prerequisites Details
 
-* Kubernetes 1.6+
-* PV dynamic provisioning support on the underlying infrastructure
+- Kubernetes 1.6+
+- PV dynamic provisioning support on the underlying infrastructure
 
 ## Todo
 
-* Document a setup using a `ReadWriteMany` storage that is resilient and scallable.
-* Maybe use part of pypicloud in order to use S3 or GCS backend storage.
+- Document a setup using a `ReadWriteMany` storage that is resilient and scallable.
+- Maybe use part of pypicloud in order to use S3 or GCS backend storage.
+
+## Adding the repo
+
+To add the repo to helm with the name `owkin`:
+
+```bash
+$ helm repo add owkin https://owkin.github.io/charts
+```
 
 ## Installing the Chart
 
 To install the chart with the release name `my-release`:
 
 ```bash
-$ helm install --name my-release incubator/pypisever
+$ helm install --name my-release owkin/pypiserver
 ```
 
 ## Upgrading the Charts
@@ -25,7 +33,7 @@ $ helm install --name my-release incubator/pypisever
 Updating the chart is as straightforward as updating the helm release
 
 ```bash
-$ helm upgrade my-release incubator/pypisever
+$ helm upgrade my-release owkin/pypiserver
 ```
 
 ## Configuration
@@ -45,6 +53,7 @@ The following tables lists the configurable parameters of the PyPI server chart 
 | `ingress.labels`                   | Ingress labels                                                 | `{}`                    |
 | `ingress.annotations`              | Ingress annotations                                            | `{}`                    |
 | `ingress.path`                     | Ingress path                                                   | `nil`                   |
+| `ingress.hosts`                    | Ingress hosts                                                  | `nil`                   |
 | `ingress.tls`                      | Ingress TLS configuration                                      | `[]`                    |
 | `service.type`                     | Service type                                                   | `ClusterIP`             |
 | `service.port`                     | Service port                                                   | `8080`                  |
