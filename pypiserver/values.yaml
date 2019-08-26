@@ -7,6 +7,12 @@ image:
   pullPolicy: IfNotPresent
   pullSecrets: []
 
+pypiserver:
+  # for a list of options see: https://github.com/pypiserver/pypiserver
+  extraArgs: []
+    # - --disable-fallback
+    # - --log-conf=/path/to/file
+
 auth:
   ## comma-separated list of (case-insensitive) actions to authenticate
   ## Use '.' or '' for empty. Requires to have set the password (option below).

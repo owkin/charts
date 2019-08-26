@@ -40,7 +40,14 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           command: ["pypi-server"]
-          args: ["-P", "/config/.htpasswd", "-a", "{{ .Values.auth.actions }}", "-p", "8080", "/data/packages"]
+          args:
+            - --passwords=/config/.htpasswd
+            - --authenticate={{ .Values.auth.actions }}
+            - --port=8080
+            {{- range .Values.pypiserver.extraArgs }}
+            - {{ . }}
+            {{- end }}
+            - /data/packages
           ports:
             - name: http
               containerPort: 8080
