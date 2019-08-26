@@ -49,6 +49,7 @@ The following tables lists the configurable parameters of the PyPI server chart 
 | `image.pullSecrets`                | Container pull secrets                                         | `[]`                    |
 | `auth.actions`                     | Actions requiring authentication (comma separated list)        | `update`                |
 | `auth.credentials`                 | Map of username / encoded password to write in a htpasswd file | `{}`                    |
+| `deployment.labels`                | Deployment labels (Also applied to the pod)                    | `{}`                    |
 | `ingress.enabled`                  | Ingress configuration flag                                     | `false`                 |
 | `ingress.labels`                   | Ingress labels                                                 | `{}`                    |
 | `ingress.annotations`              | Ingress annotations                                            | `{}`                    |
