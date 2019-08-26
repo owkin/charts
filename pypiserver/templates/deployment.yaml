@@ -25,10 +25,6 @@ spec:
         - name: {{ . }}
       {{- end }}
       {{- end }}
-      {{- if .Values.persistence.enabled }}
-      securityContext:
-        fsGroup: 1000
-      {{- end }}
       containers:
         - name: {{ template "pypiserver.name" . }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
