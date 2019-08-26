@@ -23,6 +23,7 @@ after_script:
   - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then git config --global user.email "travis@travis-ci.org"; fi'
   - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then git config --global user.name "Travis CI"; fi'
   - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then git checkout -b gh-pages; fi'
+  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then git merge master -q; fi'
   - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then helm package $PACKAGE; fi'
   - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then helm repo index .; fi'
   - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then git add .; fi'
