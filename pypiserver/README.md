@@ -44,7 +44,7 @@ The following tables lists the configurable parameters of the PyPI server chart 
 | ---------------------------------- | ---------------------------------------------------------------------------------------- | ----------------------- |
 | `replicaCount`                     | Deployment replica count                                                                 | `1`                     |
 | `image.repository`                 | Container image repository                                                               | `pypiserver/pypiserver` |
-| `image.tag`                        | Container image name                                                                     | `v1.2.7`                |
+| `image.tag`                        | Container image name                                                                     | `v1.3.0`                |
 | `image.pullPolicy`                 | Container pull policy                                                                    | `IfNotPresent`          |
 | `image.pullSecrets`                | Container pull secrets                                                                   | `[]`                    |
 | `pypiserver.extraArgs`             | Additional arguments (beside -P, -p, -a) to be passed to the underyling pypiserver image | `[]`                    |

@@ -17,6 +17,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Default appVersion (version of pypiserver) is now 1.3.0
+
 ### Removed
 
 ## [1.0.1]
