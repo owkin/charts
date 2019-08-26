@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Ability to add labels to deployments/pods:
   The deployment.labels map is applied to the deployment and the pods
 
+- Ability supply additional command line arguments to pypiserver:
+  The pypiserver.extraArgs list is added to the pypiserver startup command
+
 ### Changed
 
 ### Removed
