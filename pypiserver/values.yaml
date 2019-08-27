@@ -3,9 +3,15 @@ replicaCount: 1
 
 image:
   repository: pypiserver/pypiserver
-  tag: v1.2.7
+  tag: v1.3.0
   pullPolicy: IfNotPresent
   pullSecrets: []
+
+pypiserver:
+  # for a list of options see: https://github.com/pypiserver/pypiserver
+  extraArgs: []
+    # - --disable-fallback
+    # - --log-conf=/path/to/file
 
 auth:
   ## comma-separated list of (case-insensitive) actions to authenticate
@@ -15,6 +21,9 @@ auth:
   ## List of username / encoded passwords that will be put to the htpasswd file
   ## use `htpasswd -n -b username password` to generate them
   credentials: {}
+
+deployment:
+  labels: {}
 
 ingress:
   enabled: false
