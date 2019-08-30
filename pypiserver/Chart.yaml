@@ -5,6 +5,7 @@ appVersion: 1.3.0
 description: PyPI compatible server for pip or easy_install.
 icon: https://raw.githubusercontent.com/pypiserver/pypiserver/master/pypiserver_logo.png
 sources:
+  - https://github.com/owkin/charts/tree/master/pypiserver
   - https://github.com/pypiserver/pypiserver
   - https://pypi.org/project/pypiserver/
 maintainers:
