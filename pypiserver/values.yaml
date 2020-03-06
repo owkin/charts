@@ -25,6 +25,11 @@ auth:
 deployment:
   labels: {}
 
+podAnnotations: {}
+
+podLabels: {}
+
+
 ingress:
   enabled: false
   labels: {}

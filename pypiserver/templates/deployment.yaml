@@ -21,8 +21,15 @@ spec:
       labels:
         app.kubernetes.io/name: {{ template "pypiserver.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
-        {{- if .Values.deployment.labels }}
-        {{- toYaml .Values.deployment.labels | nindent 8 }}
+        {{- if .Values.podLabels }}
+        {{- toYaml .Values.podLabels | nindent 8 }}
+        {{- end }}
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/secret.yaml") . | sha256sum }}
+        {{- if .Values.podAnnotations }}
+          {{- range $key, $value := .Values.podAnnotations }}
+            {{$key|quote}}: {{$value|quote}}
+          {{- end }}
         {{- end }}
     spec:
       {{- with .Values.image.pullSecrets }}
