@@ -18,7 +18,7 @@ auth:
   ## Use '.' or '' for empty. Requires to have set the password (option below).
   ## Available actions are update, download and list
   actions: update
-  ## List of username / encoded passwords that will be put to the htpasswd file
+  ## Map of username / encoded passwords that will be put to the htpasswd file
   ## use `htpasswd -n -b username password` to generate them
   credentials: {}
 
