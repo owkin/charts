@@ -22,13 +22,9 @@ auth:
   ## use `htpasswd -n -b username password` to generate them
   credentials: {}
 
-deployment:
-  labels: {}
-
 podAnnotations: {}
 
 podLabels: {}
-
 
 ingress:
   enabled: false
