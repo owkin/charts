@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Breaking Changes
 
-- `podLabels` deprecates `deployment.labels`
+- `podLabels` replaces `deployment.labels`
 
 ### Added
 

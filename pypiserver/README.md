@@ -50,7 +50,6 @@ The following tables lists the configurable parameters of the PyPI server chart 
 | `pypiserver.extraArgs`             | Additional arguments (beside -P, -p, -a) to be passed to the underyling pypiserver image | `[]`                    |
 | `auth.actions`                     | Actions requiring authentication (comma separated list)                                  | `update`                |
 | `auth.credentials`                 | Map of username / encoded password to write in a htpasswd file                           | `{}`                    |
-| `deployment.labels`                | Deployment labels (Also applied to the pod)                                              | `{}`                    |
 | `ingress.enabled`                  | Ingress configuration flag                                                               | `false`                 |
 | `ingress.labels`                   | Ingress labels                                                                           | `{}`                    |
 | `ingress.annotations`              | Ingress annotations                                                                      | `{}`                    |
@@ -75,5 +74,7 @@ The following tables lists the configurable parameters of the PyPI server chart 
 | `nodeSelector`                     | Node selector of the deployment                                                          | `{}`                    |
 | `tolerations`                      | Tolerations configuration for the deployment                                             | `[]`                    |
 | `affinity`                         | Affinity of the deployment                                                               | `{}`                    |
+| `podLabels`                        | Extra labels applied to the pod                                                          | `{}`                    |
+| `podAnnotations`                   | Extra annotations applied to the pod                                                     | `{}`                    |
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`.
