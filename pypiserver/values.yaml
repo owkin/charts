@@ -3,7 +3,7 @@ replicaCount: 1
 
 image:
   repository: pypiserver/pypiserver
-  tag: v1.3.0
+  tag: v1.3.2
   pullPolicy: IfNotPresent
   pullSecrets: []
 
@@ -18,12 +18,13 @@ auth:
   ## Use '.' or '' for empty. Requires to have set the password (option below).
   ## Available actions are update, download and list
   actions: update
-  ## List of username / encoded passwords that will be put to the htpasswd file
+  ## Map of username / encoded passwords that will be put to the htpasswd file
   ## use `htpasswd -n -b username password` to generate them
   credentials: {}
 
-deployment:
-  labels: {}
+podAnnotations: {}
+
+podLabels: {}
 
 ingress:
   enabled: false
