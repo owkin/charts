@@ -13,9 +13,6 @@ addons:
       confinement: classic
       channel: stable
 
-before_script:
-  - helm init 
-
 script:
   - helm lint $PACKAGE
 

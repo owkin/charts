@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.0]
+
+### Changed
+
+- Changed apiVersion of Deployment from extensions/v1beta1 to apps/v1 (not considered a breaking change as it's availble since v1.9)
+- Changed apiVersion of Ingress from extensions/v1beta1 to networking.k8s.io/v1beta1 (not considered a breaking change as it's availble since v1.14)
+- Fixing continuous integration
+
 ## [2.0.0]
 
 ### Breaking Changes
