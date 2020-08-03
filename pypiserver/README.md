@@ -70,6 +70,11 @@ The following tables lists the configurable parameters of the PyPI server chart 
 | `persistence.existingClaim`        | Persistent volume claim static name                                                      | `nil`                   |
 | `persistence.accessMode`           | Persistence access mode                                                                  | `ReadWriteOnce`         |
 | `persistence.size`                 | Persistence volume size                                                                  | `5Gi`                   |
+| `externalMount.enabled             | External mount configuration flag                                                        |  false                  |
+| `externalMount.path                | Path to external mount on host                                                           |  nil                    |
+| `securityContext.runAsUser         | User ID to run as                                                                        |  0                      |
+| `securityContext.runAsGroup        | Group ID to run as                                                                       |  0                      |
+| `securityContext.privileged        | Whether to run as privileged user                                                        |  false                  |
 | `resources`                        | Resources configuration bloc                                                             | `{}`                    |
 | `nodeSelector`                     | Node selector of the deployment                                                          | `{}`                    |
 | `tolerations`                      | Tolerations configuration for the deployment                                             | `[]`                    |

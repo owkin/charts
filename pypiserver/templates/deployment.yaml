@@ -35,12 +35,16 @@ spec:
         - name: {{ . }}
       {{- end }}
       {{- end }}
-      {{- if .Values.persistence.enabled }}
       securityContext:
+        runAsUser: {{ .Values.securityContext.runAsUser }}
+        runAsGroup: {{ .Values.securityContext.runAsGroup }}
+        {{- if .Values.persistence.enabled }}
         fsGroup: 1000
-      {{- end }}
+        {{- end }}
       containers:
         - name: {{ template "pypiserver.name" . }}
+          securityContext:
+            privileged: {{ .Values.securityContext.privileged }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           command: ["pypi-server"]
@@ -57,8 +61,14 @@ spec:
               containerPort: 8080
               protocol: TCP
           volumeMounts:
+            {{- if .Values.externalMount.enabled }}
+            - mountPath: /data/packages
+              name: externalmount
+              mountPropagation: HostToContainer
+            {{- else }}
             - mountPath: /data/packages
               name: packages
+            {{- end}}
             - mountPath: /config
               name: secrets
               readOnly: true
@@ -82,6 +92,12 @@ spec:
         - name: secrets
           secret:
             secretName: {{ template "pypiserver.fullname" . }}
+        {{- if .Values.externalMount.enabled }}
+        - name: externalmount
+          hostPath:
+            path: {{ .Values.externalMount.path }}
+            type: Directory
+        {{- end }}
         - name: packages
         {{- if .Values.persistence.enabled }}
           persistentVolumeClaim:

@@ -71,6 +71,15 @@ persistence:
   accessMode: ReadWriteOnce
   size: 5Gi
 
+externalMount:
+  enabled: false
+  # path: /
+
+securityContext:
+  runAsUser: 0
+  runAsGroup: 0
+  privileged: false
+
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
