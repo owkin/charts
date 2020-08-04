@@ -35,12 +35,12 @@ spec:
         - name: {{ . }}
       {{- end }}
       {{- end }}
+      {{- if .Values.securityContext.enabled }}
       securityContext:
         runAsUser: {{ .Values.securityContext.runAsUser }}
         runAsGroup: {{ .Values.securityContext.runAsGroup }}
-        {{- if .Values.persistence.enabled }}
-        fsGroup: 1000
-        {{- end }}
+        fsGroup: {{ .Values.securityContext.fsGroup }}
+      {{- end }}
       containers:
         - name: {{ template "pypiserver.name" . }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
