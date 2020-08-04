@@ -73,7 +73,7 @@ persistence:
   mountPropagation: None
 
 securityContext:
-  enabled: false
+  enabled: true
   runAsUser: 0
   runAsGroup: 0
   fsGroup: 1000
