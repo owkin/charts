@@ -43,8 +43,6 @@ spec:
         {{- end }}
       containers:
         - name: {{ template "pypiserver.name" . }}
-          securityContext:
-            privileged: {{ .Values.securityContext.privileged }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           command: ["pypi-server"]

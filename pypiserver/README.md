@@ -74,7 +74,6 @@ The following tables lists the configurable parameters of the PyPI server chart 
 | `hostPathMount.path                | Host path to mount                                                                       |  nil                    |
 | `securityContext.runAsUser         | User ID to run as                                                                        |  0                      |
 | `securityContext.runAsGroup        | Group ID to run as                                                                       |  0                      |
-| `securityContext.privileged        | Whether to run as privileged user                                                        |  false                  |
 | `resources`                        | Resources configuration bloc                                                             | `{}`                    |
 | `nodeSelector`                     | Node selector of the deployment                                                          | `{}`                    |
 | `tolerations`                      | Tolerations configuration for the deployment                                             | `[]`                    |

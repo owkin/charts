@@ -78,7 +78,6 @@ hostPathMount:
 securityContext:
   runAsUser: 0
   runAsGroup: 0
-  privileged: false
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
