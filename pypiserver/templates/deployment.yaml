@@ -61,9 +61,9 @@ spec:
               containerPort: 8080
               protocol: TCP
           volumeMounts:
-            {{- if .Values.externalMount.enabled }}
+            {{- if .Values.hostPathMount.enabled }}
             - mountPath: /data/packages
-              name: externalmount
+              name: hostpathmount
               mountPropagation: HostToContainer
             {{- else }}
             - mountPath: /data/packages
@@ -92,10 +92,10 @@ spec:
         - name: secrets
           secret:
             secretName: {{ template "pypiserver.fullname" . }}
-        {{- if .Values.externalMount.enabled }}
-        - name: externalmount
+        {{- if .Values.hostPathMount.enabled }}
+        - name: hostpathmount
           hostPath:
-            path: {{ .Values.externalMount.path }}
+            path: {{ .Values.hostPathMount.path }}
             type: Directory
         {{- end }}
         - name: packages

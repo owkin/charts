@@ -71,7 +71,7 @@ persistence:
   accessMode: ReadWriteOnce
   size: 5Gi
 
-externalMount:
+hostPathMount:
   enabled: false
   # path: /
 
