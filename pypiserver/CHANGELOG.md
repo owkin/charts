@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Allowed configuration of user and group
-- Allowed configuration of an external mount for packages
+- Allowed mountPropagation field configuration for a PV
 
 ## [2.1.0]
 

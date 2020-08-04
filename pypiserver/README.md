@@ -70,12 +70,11 @@ The following tables lists the configurable parameters of the PyPI server chart 
 | `persistence.existingClaim`        | Persistent volume claim static name                                                      | `nil`                   |
 | `persistence.accessMode`           | Persistence access mode                                                                  | `ReadWriteOnce`         |
 | `persistence.size`                 | Persistence volume size                                                                  | `5Gi`                   |
-| `hostPathMount.enabled             | Host directory mount configuration flag                                                  |  false                  |
-| `hostPathMount.path                | Host path to mount                                                                       |  nil                    |
-| `securityContext.enabled           | Security context configuration flag                                                      |  0                      |
-| `securityContext.runAsUser         | User ID to run as                                                                        |  0                      |
-| `securityContext.runAsGroup        | Group ID to run as                                                                       |  0                      |
-| `securityContext.fsGroup           | Filesystem volume owner                                                                  |  1000                   |
+| `persistence.mountPropagation`     | Mount propagation method                                                                 | `nil`                   |
+| `securityContext.enabled`          | Security context configuration flag                                                      | `0`                     |
+| `securityContext.runAsUser`        | User ID to run as                                                                        | `0`                     |
+| `securityContext.runAsGroup`       | Group ID to run as                                                                       | `0`                     |
+| `securityContext.fsGroup`          | Filesystem volume owner                                                                  | `1000`                  |
 | `resources`                        | Resources configuration bloc                                                             | `{}`                    |
 | `nodeSelector`                     | Node selector of the deployment                                                          | `{}`                    |
 | `tolerations`                      | Tolerations configuration for the deployment                                             | `[]`                    |

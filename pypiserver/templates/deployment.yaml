@@ -59,14 +59,9 @@ spec:
               containerPort: 8080
               protocol: TCP
           volumeMounts:
-            {{- if .Values.hostPathMount.enabled }}
-            - mountPath: /data/packages
-              name: hostpathmount
-              mountPropagation: HostToContainer
-            {{- else }}
             - mountPath: /data/packages
               name: packages
-            {{- end}}
+              mountPropagation: {{ .Values.persistence.mountPropagation }}
             - mountPath: /config
               name: secrets
               readOnly: true
@@ -90,12 +85,6 @@ spec:
         - name: secrets
           secret:
             secretName: {{ template "pypiserver.fullname" . }}
-        {{- if .Values.hostPathMount.enabled }}
-        - name: hostpathmount
-          hostPath:
-            path: {{ .Values.hostPathMount.path }}
-            type: Directory
-        {{- end }}
         - name: packages
         {{- if .Values.persistence.enabled }}
           persistentVolumeClaim:

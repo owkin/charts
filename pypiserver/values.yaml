@@ -70,10 +70,7 @@ persistence:
   ## than one replica
   accessMode: ReadWriteOnce
   size: 5Gi
-
-hostPathMount:
-  enabled: false
-  # path: /
+  # mountPropagation: HostToContainer
 
 securityContext:
   enabled: false
