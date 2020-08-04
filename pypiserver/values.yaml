@@ -70,7 +70,7 @@ persistence:
   ## than one replica
   accessMode: ReadWriteOnce
   size: 5Gi
-  # mountPropagation: HostToContainer
+  mountPropagation: None
 
 securityContext:
   enabled: false
