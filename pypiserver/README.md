@@ -71,7 +71,7 @@ The following tables lists the configurable parameters of the PyPI server chart 
 | `persistence.accessMode`           | Persistence access mode                                                                  | `ReadWriteOnce`         |
 | `persistence.size`                 | Persistence volume size                                                                  | `5Gi`                   |
 | `persistence.mountPropagation`     | Mount propagation method                                                                 | `nil`                   |
-| `securityContext.enabled`          | Security context configuration flag                                                      | `0`                     |
+| `securityContext.enabled`          | Security context configuration flag                                                      | `true`                     |
 | `securityContext.runAsUser`        | User ID to run as                                                                        | `0`                     |
 | `securityContext.runAsGroup`       | Group ID to run as                                                                       | `0`                     |
 | `securityContext.fsGroup`          | Filesystem volume owner                                                                  | `1000`                  |
