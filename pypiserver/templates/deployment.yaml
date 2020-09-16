@@ -47,7 +47,9 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           command: ["pypi-server"]
           args:
+            {{- if .Values.auth.actions }}
             - --passwords=/config/.htpasswd
+            {{- end }}
             - --authenticate={{ .Values.auth.actions }}
             - --port=8080
             {{- range .Values.pypiserver.extraArgs }}
