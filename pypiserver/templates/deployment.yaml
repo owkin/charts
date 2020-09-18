@@ -48,7 +48,7 @@ spec:
           command: ["pypi-server"]
           args:
             - --passwords={{ if .Values.auth.actions }}/config/.htpasswd{{ else }}.{{ end }}
-            - --authenticate={{ .Values.auth.actions }}
+            - --authenticate={{ .Values.auth.actions | default "." }}
             - --port=8080
             {{- range .Values.pypiserver.extraArgs }}
             - {{ . }}
