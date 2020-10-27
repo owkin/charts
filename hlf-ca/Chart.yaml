@@ -1,0 +1,22 @@
+apiVersion: v1
+description: Hyperledger Fabric Certificate Authority chart (these charts are forked from the one by AID:Tech and are currently not directly associated with them or Hyperledger project)
+name: hlf-ca
+version: 1.2.0
+appVersion: 1.4.3
+keywords:
+  - blockchain
+  - hyperledger
+  - fabric
+home: http://hyperledger-fabric-ca.readthedocs.io
+sources:
+  - https://github.com/hyperledger/fabric-ca
+maintainers:
+  - name:  AlexandrePicosson
+    email: alexandre.picosson@owkin.com
+  - name: AurelienGasser
+    email: aurelien.gasser@owkin.com
+  - name: inalgnu
+    email: inalgnu@ulipse.com
+  - name: Kelvin-M
+    email: kelvin.moutet@owkin.com
+icon: https://www.hyperledger.org/wp-content/uploads/2018/04/fabric-logo.png
