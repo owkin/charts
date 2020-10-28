@@ -2,6 +2,10 @@ language: minimal
 
 env:
   - PACKAGE=pypiserver
+  - PACKAGE=hlf-couchdb
+  - PACKAGE=hlf-ca
+  - PACKAGE=hlf-peer
+  - PACKAGE=hlf-ord
 
 branches:
   only:
