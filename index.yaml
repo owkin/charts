@@ -1,9 +1,38 @@
 apiVersion: v1
 entries:
+  hlf-ord:
+  - apiVersion: v1
+    appVersion: 2.2.1
+    created: "2020-10-28T10:50:45.47354314Z"
+    description: Hyperledger Fabric Orderer chart (these charts are forked from the
+      one by AID:Tech and are currently not directly associated with them or Hyperledger
+      project)
+    digest: b74f77c4df93717514133301714a477b6f40a06c45901cd4da4856d901cbcd97
+    home: http://hyperledger-fabric.readthedocs.io
+    icon: https://www.hyperledger.org/wp-content/uploads/2018/04/fabric-logo.png
+    keywords:
+    - blockchain
+    - hyperledger
+    - fabric
+    maintainers:
+    - email: alexandre.picosson@owkin.com
+      name: AlexandrePicosson
+    - email: aurelien.gasser@owkin.com
+      name: AurelienGasser
+    - email: inalgnu@ulipse.com
+      name: inalgnu
+    - email: kelvin.moutet@owkin.com
+      name: Kelvin-M
+    name: hlf-ord
+    sources:
+    - https://github.com/hyperledger/fabric
+    urls:
+    - hlf-ord-2.0.0.tgz
+    version: 2.0.0
   hlf-peer:
   - apiVersion: v1
     appVersion: 2.2.1
-    created: "2020-10-28T10:50:41.890370434Z"
+    created: "2020-10-28T10:50:45.474625475Z"
     description: Hyperledger Fabric Peer chart (these charts are forked from the one
       by AID:Tech and are currently not directly associated with them or Hyperledger
       project)
@@ -32,7 +61,7 @@ entries:
   pypiserver:
   - apiVersion: v1
     appVersion: 1.3.2
-    created: "2020-10-28T10:50:41.899520717Z"
+    created: "2020-10-28T10:50:45.478876033Z"
     description: PyPI compatible server for pip or easy_install.
     digest: f6ba909e5bc91a37cdfc388b2241c4cf1dd5cef5a6102ffdffae9e5bf877ab21
     home: https://github.com/pypiserver/pypiserver
@@ -50,7 +79,7 @@ entries:
     version: 2.2.1
   - apiVersion: v1
     appVersion: 1.3.2
-    created: "2020-10-28T10:50:41.898896243Z"
+    created: "2020-10-28T10:50:45.478240241Z"
     description: PyPI compatible server for pip or easy_install.
     digest: 70444981899fbea88cf81b4756c8646d9b8be4217003ef1f4a37fe6668a87117
     home: https://github.com/pypiserver/pypiserver
@@ -68,7 +97,7 @@ entries:
     version: 2.2.0
   - apiVersion: v1
     appVersion: 1.3.2
-    created: "2020-10-28T10:50:41.898359763Z"
+    created: "2020-10-28T10:50:45.477659827Z"
     description: PyPI compatible server for pip or easy_install.
     digest: d08d439ce947bddfaa0180fb8e3befc84011e62865c25a6f7c4d764296f37375
     home: https://github.com/pypiserver/pypiserver
@@ -86,7 +115,7 @@ entries:
     version: 2.1.0
   - apiVersion: v1
     appVersion: 1.3.2
-    created: "2020-10-28T10:50:41.89783463Z"
+    created: "2020-10-28T10:50:45.477101139Z"
     description: PyPI compatible server for pip or easy_install.
     digest: 4fe73b9ff26e960ea5e53a5c87db7523153264f690b4d9f3e8aa78100dfc85e8
     home: https://github.com/pypiserver/pypiserver
@@ -104,7 +133,7 @@ entries:
     version: 2.0.0
   - apiVersion: v1
     appVersion: 1.3.0
-    created: "2020-10-28T10:50:41.897239501Z"
+    created: "2020-10-28T10:50:45.476558657Z"
     description: PyPI compatible server for pip or easy_install.
     digest: 4a63de4332ca6baad84866d06e326300bb447fe31f68161e61828a8d479f5182
     home: https://github.com/pypiserver/pypiserver
@@ -122,7 +151,7 @@ entries:
     version: 1.1.0
   - apiVersion: v1
     appVersion: 1.2.7
-    created: "2020-10-28T10:50:41.896672696Z"
+    created: "2020-10-28T10:50:45.476040049Z"
     description: PyPI compatible server for pip or easy_install.
     digest: 28f1d4bf66925987f5a45997095cff5d6946740ff5f420bdc4388d73f1d28026
     home: https://github.com/pypiserver/pypiserver
@@ -139,7 +168,7 @@ entries:
     version: 1.0.1
   - apiVersion: v1
     appVersion: 1.2.7
-    created: "2020-10-28T10:50:41.891468275Z"
+    created: "2020-10-28T10:50:45.475576521Z"
     description: PyPI compatible server for pip or easy_install.
     digest: e3575a537d7cc0c099b3086a1053d498ed7ff3f53e28666eec82b1a7658ab029
     home: https://github.com/pypiserver/pypiserver
@@ -156,7 +185,7 @@ entries:
     version: 1.0.0
   - apiVersion: v1
     appVersion: 1.2.7
-    created: "2020-10-28T10:50:41.890907231Z"
+    created: "2020-10-28T10:50:45.475127295Z"
     description: PyPI compatible server for pip or easy_install.
     digest: 59a22443adf56357d630f0a78bc5e8e53a1d2a53e8c26e91ad5cc85a6933941d
     home: https://github.com/pypiserver/pypiserver
@@ -171,4 +200,4 @@ entries:
     urls:
     - pypiserver-1.0.0-rc.1.tgz
     version: 1.0.0-rc.1
-generated: "2020-10-28T10:50:41.888087215Z"
+generated: "2020-10-28T10:50:45.472203492Z"
