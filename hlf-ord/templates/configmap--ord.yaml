@@ -32,6 +32,9 @@ data:
   ORDERER_GENERAL_TLS_CLIENTROOTCAS: "/var/hyperledger/tls/client/cert/*"
   ORDERER_GENERAL_TLS_CLIENTCERT_FILE: "/var/hyperledger/tls/client/pair/tls.crt"
   ORDERER_GENERAL_TLS_CLIENTKEY_FILE: "/var/hyperledger/tls/client/pair/tls.key"
+  ORDERER_GENERAL_CLUSTER_CLIENTCERTIFICATE: "/var/hyperledger/tls/server/pair/tls.crt"
+  ORDERER_GENERAL_CLUSTER_CLIENTPRIVATEKEY: "/var/hyperledger/tls/server/pair/tls.key"
+  ORDERER_GENERAL_CLUSTER_ROOTCAS: "/var/hyperledger/tls/server/cert/cacert.pem"
   GODEBUG: "netdns=go"
   ADMIN_MSP_PATH: /var/hyperledger/admin_msp
   ##############
