@@ -68,8 +68,8 @@ logging:
 peer:
   # Type of database ("goleveldb" or "CouchDB"):
   databaseType: goleveldb
-  # If CouchDB is used, which chart holds it
-  couchdbInstance: cdb-peer1
+  # If CouchDB is used the name of the secret holding couchdb credentials
+  couchdbSecret: cdb-peer1-hlf-couchdb
   ## MSP ID of the Peer
   mspID: Org1MSP
   gossip:
