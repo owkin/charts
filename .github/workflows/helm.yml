@@ -1,0 +1,61 @@
+name: Helm
+
+strategy:
+  package:
+    name:
+      - pypiserver
+      - hlf-couchdb
+      - hlf-ca
+      - hlf-peer
+      - hlf-ord
+
+on:
+  push:
+    branches:
+      - "master"
+  pull_request:
+    branches:
+      - "master"
+
+jobs:
+  test:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: azure/setup-helm@v1
+        with:
+          version: 'v3.2.3'
+        id: install
+      - name: Lint charts
+        run: helm lint ${{ package.name }}
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+    needs: test
+    steps:
+      - uses: actions/checkout@v2
+      - uses: azure/setup-helm@v1
+        with:
+            version: 'v3.2.3'
+        id: install
+      - name: Package chart
+        run: |
+          helm package ${{ package.name }}
+      - name: Setup key
+        run: |
+          mkdir $HOME/.ssh
+          echo "${{ secrets.CHARTS_ACCESS_KEY }}" > $HOME/.ssh/id_rsa
+          chmod 400 ~/.ssh/id_rsa
+      - name: Publish chart
+        run: |
+          git config --global user.email "gh-actions@github.com"
+          git config --global user.name "GitHub Action"
+          git clone git@github.com:Owkin/charts.git charts -b gh-pages
+          mv ${{package.name}}-*.tgz charts/
+          cd charts
+          helm repo index .
+          git add .
+          git commit --message "GitHub Action: ${{ github.repository }}@${{ github.sha }}"
+          git push origin gh-pages
