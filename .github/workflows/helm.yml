@@ -10,7 +10,7 @@ on:
 
 jobs:
   test:
-    name: Lint
+    name: Build
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -26,41 +26,43 @@ jobs:
         with:
           version: 'v3.2.3'
         id: install
-      - name: Lint charts
+      - name: Configure Helm repo
+        run: helm repo add stable https://charts.helm.sh/stable
+      - name: Lint chart
         run: helm lint ${{ matrix.package }}
+      - name: Package chart
+        run: |
+          helm dep build ${{ matrix.package }}
+          helm package ${{ matrix.package }} -d dist
+      - name: Archive packaged chart
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist-${{matrix.package}}
+          path: dist/*.tgz
   publish:
     name: Publish
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master' && github.event_name == 'push'
     needs: test
-    strategy:
-      matrix:
-        package:
-          - pypiserver
-          - hlf-couchdb
-          - hlf-ca
-          - hlf-peer
-          - hlf-ord
     steps:
       - uses: actions/checkout@v2
       - uses: azure/setup-helm@v1
         with:
             version: 'v3.2.3'
         id: install
-      - name: Package chart
-        run: |
-          helm package ${{ matrix.package }}
+      - name: Download all workflow run artifacts
+        uses: actions/download-artifact@v2
       - name: Setup key
         run: |
           mkdir $HOME/.ssh
           echo "${{ secrets.CHARTS_ACCESS_KEY }}" > $HOME/.ssh/id_rsa
           chmod 400 ~/.ssh/id_rsa
-      - name: Publish chart
+      - name: Publish charts
         run: |
           git config --global user.email "gh-actions@github.com"
           git config --global user.name "GitHub Action"
-          git clone git@github.com:Owkin/charts.git charts -b gh-pages
-          mv ${{matrix.package}}-*.tgz charts/
+          git clone git@github.com:owkin/charts.git charts -b gh-pages
+          mv dist-*/*.tgz charts/
           cd charts
           helm repo index .
           git add .
