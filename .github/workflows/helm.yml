@@ -1,13 +1,14 @@
 name: Helm
 
-strategy:
-  package:
-    name:
-      - pypiserver
-      - hlf-couchdb
-      - hlf-ca
-      - hlf-peer
-      - hlf-ord
+defaults:
+  strategy:
+    package:
+      name:
+        - pypiserver
+        - hlf-couchdb
+        - hlf-ca
+        - hlf-peer
+        - hlf-ord
 
 on:
   push:
