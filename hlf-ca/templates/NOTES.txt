@@ -18,14 +18,14 @@ Run the following commands to...
   echo http://$SERVICE_IP:{{ .Values.service.port }}
 {{- else if contains "ClusterIP" .Values.service.type }}
   echo "Visit http://127.0.0.1:8080 to use your application"
-  kubectl port-forward $POD_NAME 8080:7054
+  kubectl port-forward --namespace {{ .Release.Namespace }} $POD_NAME 8080:7054
 {{- end }}
 
 3. Display local (admin "client" enrollment) certificate, if it has been created:
-  kubectl exec $POD_NAME -- cat /var/hyperledger/fabric-ca/msp/signcerts/cert.pem
+  kubectl exec --namespace {{ .Release.Namespace }} $POD_NAME -- cat /var/hyperledger/fabric-ca/msp/signcerts/cert.pem
 
 4. Enroll the bootstrap admin identity:
-  kubectl exec $POD_NAME -- bash -c 'fabric-ca-client enroll -d -u http://$CA_ADMIN:$CA_PASSWORD@$SERVICE_DNS:{{ .Values.service.port }}'
+  kubectl exec --namespace {{ .Release.Namespace }} $POD_NAME -- bash -c 'fabric-ca-client enroll -d -u http://$CA_ADMIN:$CA_PASSWORD@$SERVICE_DNS:{{ .Values.service.port }}'
 
 5. Update the chart without resetting a password:
   export CA_ADMIN=$(kubectl get secret --namespace {{ .Release.Namespace }} {{ include "hlf-ca.fullname" . }}--ca -o jsonpath="{.data.CA_ADMIN}" | base64 --decode; echo)
