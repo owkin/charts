@@ -76,6 +76,7 @@ The following table lists the configurable parameters of the Hyperledger Fabric 
 | `image.repository`                  | `hlf-peer` image repository                                    | `hyperledger/fabric-peer` |
 | `image.tag`                         | `hlf-peer` image tag                                           | `1.4.3`                   |
 | `image.pullPolicy`                  | Image pull policy                                              | `IfNotPresent`            |
+| `image.pullImageSecret`             | Image pull secret name                                         |  `nil`                    |
 | `service.portRequest`               | TCP port for requests to Peer                                  | `7051`                    |
 | `service.portEvent`                 | TCP port for event service on Peer                             | `7053`                    |
 | `service.portMetrics`               | TCP port for the metrics service on Peer                       | `9443`                    |

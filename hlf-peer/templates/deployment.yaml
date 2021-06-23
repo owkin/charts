@@ -19,6 +19,10 @@ spec:
       labels:
 {{ include "labels.standard" . | indent 8 }}
     spec:
+      {{- if .Values.image.pullImageSecret }}
+      imagePullSecrets:
+        - name: {{ .Values.image.pullImageSecret }}
+      {{- end }}
       volumes:
         - name: data
         {{- if .Values.persistence.enabled }}

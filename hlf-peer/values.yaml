@@ -6,6 +6,7 @@ image:
   repository: hyperledger/fabric-peer
   tag: 2.2.1
   pullPolicy: IfNotPresent
+  # pullImageSecret: docker-config
 
 service:
   # Cluster IP or LoadBalancer
