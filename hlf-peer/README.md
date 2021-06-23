@@ -103,6 +103,7 @@ The following table lists the configurable parameters of the Hyperledger Fabric 
 | `docker.configMountPath`            | Docker Config file mount path                                  | `/root/.docker`           |
 | `peer.databaseType`                 | Database type to use (`goleveldb` or `CouchDB`)                | `goleveldb`               |
 | `peer.couchdbSecret`                | Secret holding the couchdb credentials                         | `cdb-peer1-hlf-couchdb`   |
+| `peer.couchdbInstance`              | CouchDB chart name to use                                      | `cdb-peer1`               |
 | `peer.mspID`                        | ID of MSP the Peer belongs to                                  | `Org1MSP`                 |
 | `peer.gossip.bootstrap`             | Gossip bootstrap address                                       | ``                        |
 | `peer.gossip.endpoint`              | Gossip endpoint                                                | ``                        |
