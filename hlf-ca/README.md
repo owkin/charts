@@ -91,8 +91,6 @@ The following table lists the configurable parameters of the Hyperledger Fabric 
 | `adminPassword`                    | Admin Password                                   | Random 24 alphanumeric characters                          |
 | `caName`                           | Name of CA                                       | `org1-ca`                                                  |
 | `db.ssl`                           | SSL Authentication                               | `disable`                                                  |
-| `postgresql.enabled`               | Deploy a PostgreSQL container holding the CA data| `false`                                                    |
-| `mysql.enabled`                    | Deploy a MySQL container holding the CA data     | `false`                                                    |
 | `externalDatabase.type`            | Database type (either `postgres` or `mysql` )    | `nil`                                                      |
 | `externalDatabase.host`            | Host of the external database                    | `localhost`                                                |
 | `externalDatabase.username`        | Existing username in the external db             | ``                                                         |
@@ -122,23 +120,7 @@ The following table lists the configurable parameters of the Hyperledger Fabric 
 
 The Fabric CA server needs a database to store the users registered.
 
-By default the chart is configured to use an in-memory `sqlite3` database, but you can also configure the helm chart to install a `PostgreSQL` or a `MySQL` database along the Fabric CA server.
-
-### PostgreSQL
-
-To install a `postgresql` running in Kubernetes you have to enable and configure the `postgresql` section in `values.yaml` or pass the following parameter:
-
-```
- helm install stable/hlf-ca --name org1-ca --set postgresql.enabled=true
-```
-
-### MySQL
-
-To install a `mysql` running in Kubernetes you have to enable and configure the `mysql` section in `values.yaml` or pass the following parameter:
-
-```
- helm install stable/hlf-ca --name org1-ca --set mysql.enabled=true
-```
+By default the chart is configured to use an in-memory `sqlite3` database.
 
 ### External Database
 
