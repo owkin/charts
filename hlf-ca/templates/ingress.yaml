@@ -25,7 +25,7 @@ spec:
                 name: {{ include "hlf-ca.fullname" $ }}
                 port:
                   name: http
-    {{-end }}
+    {{- end }}
   {{- if .Values.ingress.tls }}
   tls:
     {{- range .Values.ingress.tls }}
@@ -34,4 +34,6 @@ spec:
         - {{ . }}
         {{- end }}
       secretName: {{ .secretName }}
+      {{- end }}
   {{- end }}
+{{- end }}
