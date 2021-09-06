@@ -34,15 +34,15 @@ spec:
         {{- end }}
         - name: ca-config
           configMap:
-            name: {{ include "hlf-ca.fullname" . }}--config    
+            name: {{ include "hlf-ca.fullname" . }}--config
       initContainers:
         - name: wait-for-db
           image: jwilder/dockerize
-          imagePullPolicy: IfNotPresent 
+          imagePullPolicy: IfNotPresent
           envFrom:
             - configMapRef:
                 name: {{ include "hlf-ca.fullname" . }}--db
-          command: 
+          command:
             - sh
             - -c
             - |
@@ -97,22 +97,6 @@ spec:
             - configMapRef:
                 name: {{ include "hlf-ca.fullname" . }}--ca
           env:
-            {{- if .Values.postgresql.enabled}}
-            # PostgreSQL Database
-            - name: DB_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: {{ template "postgresql.fullname" . }}
-                  key: postgresql-password
-            {{- end }}
-            {{- if .Values.mysql.enabled }}
-            # MySQL Database
-            - name: DB_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: {{ template "mysql.fullname" . }}
-                  key: mysql-password
-            {{- end }}
             {{- if .Values.externalDatabase.type }}
             # External Database
             - name: DB_PASSWORD
@@ -120,7 +104,7 @@ spec:
                 secretKeyRef:
                   name: {{ include "hlf-ca.fullname" . }}--db
                   key: db-password
-            {{- end }}            
+            {{- end }}
             {{- if .Values.config.intermediate }}
             # Intermediate CA
             - name: PARENT_CA_ADMIN
@@ -145,7 +129,7 @@ spec:
           readinessProbe:
             httpGet:
               path: /cainfo
-              port: 7054             
+              port: 7054
           volumeMounts:
             - name: data
               mountPath: /var/hyperledger

@@ -68,10 +68,10 @@ The command removes all the Kubernetes components associated with the chart and 
 
 The following table lists the configurable parameters of the Hyperledger Fabric CA chart and default values.
 
-| Parameter                          | Description                                     | Default                                                    |
+| Parameter                          | Description                                      | Default                                                    |
 | ---------------------------------- | ------------------------------------------------ | ---------------------------------------------------------- |
 | `image.repository`                 | `hlf-ca` image repository                        | `hyperledger/fabric-ca`                                    |
-| `image.tag`                        | `hlf-ca` image tag                               | `1.4.3`                                             |
+| `image.tag`                        | `hlf-ca` image tag                               | `1.4.3`                                                    |
 | `image.pullPolicy`                 | Image pull policy                                | `IfNotPresent`                                             |
 | `service.port`                     | TCP port                                         | `7054`                                                     |
 | `service.type`                     | K8S service type exposing ports, e.g. `ClusterIP`| `ClusterIP`                                                |
@@ -80,6 +80,8 @@ The following table lists the configurable parameters of the Hyperledger Fabric 
 | `ingress.path`                     | Ingress path                                     | `/`                                                        |
 | `ingress.hosts`                    | Ingress hostnames                                | `[]`                                                       |
 | `ingress.tls`                      | Ingress TLS configuration                        | `[]`                                                       |
+| `ingress.ingressClassName`         | Ingress class that will be used for the ingress  | `nil`                                                      |
+| `ingress.pathType`                 | Ingress path type                                | `ImplementationSpecific`                                   |
 | `persistence.existingClaim`        | Name of an existing PVC to use for Fabric CA     | `nil`                                                      |
 | `persistence.accessMode`           | Use volume as ReadOnly or ReadWrite              | `ReadWriteOnce`                                            |
 | `persistence.annotations`          | Persistent Volume annotations                    | `{}`                                                       |
@@ -89,8 +91,6 @@ The following table lists the configurable parameters of the Hyperledger Fabric 
 | `adminPassword`                    | Admin Password                                   | Random 24 alphanumeric characters                          |
 | `caName`                           | Name of CA                                       | `org1-ca`                                                  |
 | `db.ssl`                           | SSL Authentication                               | `disable`                                                  |
-| `postgresql.enabled`               | Deploy a PostgreSQL container holding the CA data | `false`                                                   |
-| `mysql.enabled`                    | Deploy a MySQL container holding the CA data     | `false`                                                    |
 | `externalDatabase.type`            | Database type (either `postgres` or `mysql` )    | `nil`                                                      |
 | `externalDatabase.host`            | Host of the external database                    | `localhost`                                                |
 | `externalDatabase.username`        | Existing username in the external db             | ``                                                         |
@@ -120,23 +120,7 @@ The following table lists the configurable parameters of the Hyperledger Fabric 
 
 The Fabric CA server needs a database to store the users registered.
 
-By default the chart is configured to use an in-memory `sqlite3` database, but you can also configure the helm chart to install a `PostgreSQL` or a `MySQL` database along the Fabric CA server.
-
-### PostgreSQL
-
-To install a `postgresql` running in Kubernetes you have to enable and configure the `postgresql` section in `values.yaml` or pass the following parameter:
-
-```
- helm install stable/hlf-ca --name org1-ca --set postgresql.enabled=true
-```
-
-### MySQL
-
-To install a `mysql` running in Kubernetes you have to enable and configure the `mysql` section in `values.yaml` or pass the following parameter:
-
-```
- helm install stable/hlf-ca --name org1-ca --set mysql.enabled=true
-```
+By default the chart is configured to use an in-memory `sqlite3` database.
 
 ### External Database
 
