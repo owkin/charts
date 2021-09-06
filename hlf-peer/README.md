@@ -95,6 +95,8 @@ The following table lists the configurable parameters of the Hyperledger Fabric 
 | `logging.policies`                  | Policies logging level                                         | `warning`                 |
 | `ingress.enabled`                   | If true, Ingress will be created                               | `false`                   |
 | `ingress.annotations`               | Ingress annotations                                            | `{}`                      |
+| `ingress.ingressClassName`          | Ingress class that will be used for the ingress                | `nil`                     |
+| `ingress.pathType`                  | Ingress path type                                              | `ImplementationSpecific`  |
 | `ingress.path`                      | Ingress path                                                   | `/`                       |
 | `ingress.hosts`                     | Ingress hostnames                                              | `[]`                      |
 | `ingress.tls`                       | Ingress TLS configuration                                      | `[]`                      |
