@@ -1,8 +1,9 @@
-apiVersion: v1
-description: Hyperledger Fabric Orderer chart (these charts are forked from the one by AID:Tech and are currently not directly associated with them or Hyperledger project)
+apiVersion: v2
 name: hlf-ord
-version: 2.0.1
-appVersion: 2.2.1
+version: 3.0.0
+kubeVersion: ">= 1.19.0"
+description: Hyperledger Fabric Orderer chart (these charts are forked from the one by AID:Tech and are currently not directly associated with them or Hyperledger project)
+type: application
 keywords:
   - blockchain
   - hyperledger
@@ -20,3 +21,4 @@ maintainers:
   - name: Kelvin-M
     email: kelvin.moutet@owkin.com
 icon: https://www.hyperledger.org/wp-content/uploads/2018/04/fabric-logo.png
+appVersion: 2.2.1

@@ -95,6 +95,8 @@ The following table lists the configurable parameters of the Hyperledger Fabric 
 | `service.portMetrics`              | TCP port for the metrics service                              | `9443`                                                     |
 | `ingress.enabled`                  | If true, Ingress will be created                              | `false`                                                    |
 | `ingress.annotations`              | Ingress annotations                                           | `{}`                                                       |
+| `ingress.ingressClassName`         | Ingress class that will be used for the ingress               | `nil`                                                      |
+| `ingress.pathType`                 | Ingress path type                                             | `ImplementationSpecific`                                   |
 | `ingress.path`                     | Ingress path                                                  | `/`                                                        |
 | `ingress.hosts`                    | Ingress hostnames                                             | `[]`                                                       |
 | `ingress.tls`                      | Ingress TLS configuration                                     | `[]`                                                       |
