@@ -66,7 +66,7 @@ The command removes all the Kubernetes components associated with the chart and 
 
 The following table lists the configurable parameters of the Hyperledger Fabric CouchDB chart and default values.
 
-| Parameter                          | Description                                     | Default                                                    |
+| Parameter                          | Description                                      | Default                                                    |
 | ---------------------------------- | ------------------------------------------------ | ---------------------------------------------------------- |
 | `image.repository`                 | `hlf-couchdb` image repository                   | `hyperledger/fabric-couchdb`                               |
 | `image.tag`                        | `hlf-couchdb` image tag                          | `x86_64-0.4.7`                                             |
@@ -77,12 +77,15 @@ The following table lists the configurable parameters of the Hyperledger Fabric 
 | `persistence.annotations`          | Persistent Volume annotations                    | `{}`                                                       |
 | `persistence.size`                 | Size of data volume (adjust for production!)     | `1Gi`                                                      |
 | `persistence.storageClass`         | Storage class of backing PVC                     | `default`                                                  |
-| `couchdbUsername`                  | Username for CouchDB                             | `couchdb`                                                     |
+| `couchdbUsername`                  | Username for CouchDB                             | `couchdb`                                                  |
 | `couchdbPassword`                  | Password for CouchDB                             | Random 24 alphanumeric characters                          |
 | `resources`                        | CPU/Memory resource requests/limits              | `{}`                                                       |
 | `nodeSelector`                     | Node labels for pod assignment                   | `{}`                                                       |
 | `tolerations`                      | Toleration labels for pod assignment             | `[]`                                                       |
 | `affinity`                         | Affinity settings for pod assignment             | `{}`                                                       |
+| `ingress.enabled`                  | If true, Ingress will be created                 | `false`                                                    |
+| `ingress.ingressClassName`         | Ingress class that will be used for the ingress  | `nil`                                                      |
+| `ingress.pathType`                 | Ingress path type                                | `ImplementationSpecific`                                   |
 
 ## Persistence
 
