@@ -25,11 +25,13 @@ docker:
 
 ingress:
   enabled: false
+  ingressClassName:
   annotations: {}
     # kubernetes.io/ingress.class: nginx
     # nginx.ingress.kubernetes.io/ssl-redirect: "true"
     # nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
     # certmanager.k8s.io/cluster-issuer: "letsencrypt-staging"
+  pathType: ImplementationSpecific
   path: /
   hosts:
     - hlf-peer.local
