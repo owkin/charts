@@ -1,7 +1,7 @@
 apiVersion: v2
 name: hlf-ord
-version: 3.0.0
-kubeVersion: ">= 1.19.0"
+version: 3.0.1
+kubeVersion: ">= 1.19.0-0"
 description: Hyperledger Fabric Orderer chart (these charts are forked from the one by AID:Tech and are currently not directly associated with them or Hyperledger project)
 type: application
 keywords:
