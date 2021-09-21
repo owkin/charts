@@ -51,9 +51,11 @@ The following tables lists the configurable parameters of the PyPI server chart 
 | `auth.actions`                     | Actions requiring authentication (comma separated list)                                  | `update`                |
 | `auth.credentials`                 | Map of username / encoded password to write in a htpasswd file                           | `{}`                    |
 | `ingress.enabled`                  | Ingress configuration flag                                                               | `false`                 |
+| `ingress.ingressClassName`         | Ingress class name                                                                       | `nil`                   |
 | `ingress.labels`                   | Ingress labels                                                                           | `{}`                    |
 | `ingress.annotations`              | Ingress annotations                                                                      | `{}`                    |
 | `ingress.path`                     | Ingress path                                                                             | `nil`                   |
+| `ingress.pathType`                 | Ingress path type                                                                        | `ImplementationSpecific`|
 | `ingress.hosts`                    | Ingress hosts                                                                            | `nil`                   |
 | `ingress.tls`                      | Ingress TLS configuration                                                                | `[]`                    |
 | `service.type`                     | Service type                                                                             | `ClusterIP`             |
@@ -71,7 +73,7 @@ The following tables lists the configurable parameters of the PyPI server chart 
 | `persistence.accessMode`           | Persistence access mode                                                                  | `ReadWriteOnce`         |
 | `persistence.size`                 | Persistence volume size                                                                  | `5Gi`                   |
 | `persistence.mountPropagation`     | Mount propagation method                                                                 | `nil`                   |
-| `securityContext.enabled`          | Security context configuration flag                                                      | `true`                     |
+| `securityContext.enabled`          | Security context configuration flag                                                      | `true`                  |
 | `securityContext.runAsUser`        | User ID to run as                                                                        | `0`                     |
 | `securityContext.runAsGroup`       | Group ID to run as                                                                       | `0`                     |
 | `securityContext.fsGroup`          | Filesystem volume owner                                                                  | `1000`                  |

@@ -14,3 +14,24 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 {{- $name := default .Chart.Name .Values.nameOverride -}}
 {{- printf "%s-%s" .Release.Name $name | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
+
+
+{{/*
+Generate ingress backend entry that is compatible with all ports types.
+Usage:
+{{ include "pypiserver.ingress.backend" (dict "serviceName" "backendName" "servicePort" "backendPort") }}
+
+Params:
+  - serviceName - String. Name of an existing service backend
+  - servicePort - String/Int. Port name (or number) of the service. It will be translated to different yaml depending if it is a string or an integer.
+*/}}
+{{- define "pypiserver.ingress.backend" -}}
+service:
+  name: {{ .serviceName }}
+  port:
+    {{- if typeIs "string" .servicePort }}
+    name: {{ .servicePort }}
+    {{- else if or (typeIs "int" .servicePort) (typeIs "float64" .servicePort) }}
+    number: {{ .servicePort | int }}
+    {{- end }}
+{{- end -}}
