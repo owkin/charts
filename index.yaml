@@ -3,11 +3,11 @@ entries:
   hlf-ca:
   - apiVersion: v2
     appVersion: 1.4.3
-    created: "2021-09-09T08:40:38.145562207Z"
+    created: "2021-09-21T11:58:41.860100117Z"
     description: Hyperledger Fabric Certificate Authority chart (these charts are
       forked from the one by AID:Tech and are currently not directly associated with
       them or Hyperledger project)
-    digest: 337a01a2642208e91b58f1b18815bc3b7188fae167dd184c206d049e3943ab44
+    digest: 678d331a71875a9eb7efabdddac803dd23c56215e3e39c830a58298bdcd3e84d
     home: http://hyperledger-fabric-ca.readthedocs.io
     icon: https://www.hyperledger.org/wp-content/uploads/2018/04/fabric-logo.png
     keywords:
@@ -33,7 +33,7 @@ entries:
     version: 2.0.1
   - apiVersion: v2
     appVersion: 1.4.3
-    created: "2021-09-09T08:40:38.144447496Z"
+    created: "2021-09-21T11:58:41.859140605Z"
     description: Hyperledger Fabric Certificate Authority chart (these charts are
       forked from the one by AID:Tech and are currently not directly associated with
       them or Hyperledger project)
@@ -63,7 +63,7 @@ entries:
     version: 2.0.0
   - apiVersion: v1
     appVersion: 1.4.3
-    created: "2021-09-09T08:40:38.143323385Z"
+    created: "2021-09-21T11:58:41.858160392Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -105,11 +105,11 @@ entries:
   hlf-couchdb:
   - apiVersion: v2
     appVersion: 3.1.1
-    created: "2021-09-09T08:40:38.148341834Z"
+    created: "2021-09-21T11:58:41.862457848Z"
     description: CouchDB instance for Hyperledger Fabric (these charts are forked
       from the one by AID:Tech and are currently not directly associated with them
       or Hyperledger project)
-    digest: 0c7a31ae1eb0ab5ecbb6b84b3953e4ed71fdecfe7d0734be1eb116466fc0da0a
+    digest: adba2334105f41a08c7262202b0fd84ac7cd556356d39561050a9cf0ddede8c8
     home: http://hyperledger-fabric.readthedocs.io
     icon: https://www.hyperledger.org/wp-content/uploads/2018/04/fabric-logo.png
     keywords:
@@ -136,7 +136,7 @@ entries:
     version: 2.0.1
   - apiVersion: v2
     appVersion: 3.1.1
-    created: "2021-09-09T08:40:38.147628027Z"
+    created: "2021-09-21T11:58:41.86186714Z"
     description: CouchDB instance for Hyperledger Fabric (these charts are forked
       from the one by AID:Tech and are currently not directly associated with them
       or Hyperledger project)
@@ -167,7 +167,7 @@ entries:
     version: 2.0.0
   - apiVersion: v1
     appVersion: 3.1.1
-    created: "2021-09-09T08:40:38.14692402Z"
+    created: "2021-09-21T11:58:41.861218732Z"
     description: CouchDB instance for Hyperledger Fabric (these charts are forked
       from the one by AID:Tech and are currently not directly associated with them
       or Hyperledger project)
@@ -196,7 +196,7 @@ entries:
     version: 1.1.0
   - apiVersion: v1
     appVersion: 0.4.10
-    created: "2021-09-09T08:40:38.146239914Z"
+    created: "2021-09-21T11:58:41.860666225Z"
     description: CouchDB instance for Hyperledger Fabric (these charts are forked
       from the one by AID:Tech and are currently not directly associated with them
       or Hyperledger project)
@@ -226,11 +226,11 @@ entries:
   hlf-ord:
   - apiVersion: v2
     appVersion: 2.2.1
-    created: "2021-09-09T08:40:38.154458495Z"
+    created: "2021-09-21T11:58:41.867543414Z"
     description: Hyperledger Fabric Orderer chart (these charts are forked from the
       one by AID:Tech and are currently not directly associated with them or Hyperledger
       project)
-    digest: 7a2422fea7abb9481ad24f4e8d582e43d20f966eb48ec4899587e8e0a7fb0e0f
+    digest: 696ea4751b76be0e9c62019596d51bfc2b50754baaaeb2056c3202b99c8684e0
     home: http://hyperledger-fabric.readthedocs.io
     icon: https://www.hyperledger.org/wp-content/uploads/2018/04/fabric-logo.png
     keywords:
@@ -256,7 +256,7 @@ entries:
     version: 3.0.1
   - apiVersion: v2
     appVersion: 2.2.1
-    created: "2021-09-09T08:40:38.15299768Z"
+    created: "2021-09-21T11:58:41.866337898Z"
     description: Hyperledger Fabric Orderer chart (these charts are forked from the
       one by AID:Tech and are currently not directly associated with them or Hyperledger
       project)
@@ -286,7 +286,7 @@ entries:
     version: 3.0.0
   - apiVersion: v1
     appVersion: 2.2.1
-    created: "2021-09-09T08:40:38.151176062Z"
+    created: "2021-09-21T11:58:41.865146983Z"
     description: Hyperledger Fabric Orderer chart (these charts are forked from the
       one by AID:Tech and are currently not directly associated with them or Hyperledger
       project)
@@ -314,7 +314,7 @@ entries:
     version: 2.0.1
   - apiVersion: v1
     appVersion: 2.2.1
-    created: "2021-09-09T08:40:38.149455545Z"
+    created: "2021-09-21T11:58:41.86339356Z"
     description: Hyperledger Fabric Orderer chart (these charts are forked from the
       one by AID:Tech and are currently not directly associated with them or Hyperledger
       project)
@@ -343,11 +343,11 @@ entries:
   hlf-peer:
   - apiVersion: v2
     appVersion: 2.2.1
-    created: "2021-09-09T08:40:38.162477074Z"
+    created: "2021-09-21T11:58:41.874106999Z"
     description: Hyperledger Fabric Peer chart (these charts are forked from the one
       by AID:Tech and are currently not directly associated with them or Hyperledger
       project)
-    digest: 46bc5d61ed1ce16a08b1dcb7e06dda12d865d454bf212ff77754c00acd9409c1
+    digest: 466917db98a735a3d08f9310a260c7d3f22ba1ce5a99ce84f7ad0b951844d0fb
     home: http://hyperledger-fabric.readthedocs.io
     icon: https://www.hyperledger.org/wp-content/uploads/2018/04/fabric-logo.png
     keywords:
@@ -373,7 +373,7 @@ entries:
     version: 4.0.1
   - apiVersion: v2
     appVersion: 2.2.1
-    created: "2021-09-09T08:40:38.16110876Z"
+    created: "2021-09-21T11:58:41.873027985Z"
     description: Hyperledger Fabric Peer chart (these charts are forked from the one
       by AID:Tech and are currently not directly associated with them or Hyperledger
       project)
@@ -403,7 +403,7 @@ entries:
     version: 4.0.0
   - apiVersion: v1
     appVersion: 2.2.1
-    created: "2021-09-09T08:40:38.159762647Z"
+    created: "2021-09-21T11:58:41.87186117Z"
     description: Hyperledger Fabric Peer chart (these charts are forked from the one
       by AID:Tech and are currently not directly associated with them or Hyperledger
       project)
@@ -431,7 +431,7 @@ entries:
     version: 3.2.0
   - apiVersion: v1
     appVersion: 2.2.1
-    created: "2021-09-09T08:40:38.158428034Z"
+    created: "2021-09-21T11:58:41.870793156Z"
     description: Hyperledger Fabric Peer chart (these charts are forked from the one
       by AID:Tech and are currently not directly associated with them or Hyperledger
       project)
@@ -459,7 +459,7 @@ entries:
     version: 3.1.0
   - apiVersion: v1
     appVersion: 2.2.1
-    created: "2021-09-09T08:40:38.157167821Z"
+    created: "2021-09-21T11:58:41.869700742Z"
     description: Hyperledger Fabric Peer chart (these charts are forked from the one
       by AID:Tech and are currently not directly associated with them or Hyperledger
       project)
@@ -487,7 +487,7 @@ entries:
     version: 3.0.0
   - apiVersion: v1
     appVersion: 2.2.1
-    created: "2021-09-09T08:40:38.155886709Z"
+    created: "2021-09-21T11:58:41.868622228Z"
     description: Hyperledger Fabric Peer chart (these charts are forked from the one
       by AID:Tech and are currently not directly associated with them or Hyperledger
       project)
@@ -516,7 +516,7 @@ entries:
   mlhub:
   - apiVersion: v1
     appVersion: 1.0.0
-    created: "2021-09-09T08:40:38.163987989Z"
+    created: "2021-09-21T11:58:41.875406516Z"
     description: Multi-user Jupyter installation
     digest: 04c52c1f3c5861ae5189f2a13cf82c953d15809ca4f3c4e4450bc73dfa716429
     home: https://github.com/ml-tooling/ml-hub
@@ -529,9 +529,29 @@ entries:
     - mlhub-chart-1.0.0.tgz
     version: 1.0.0
   pypiserver:
+  - apiVersion: v2
+    appVersion: 1.3.2
+    created: "2021-09-21T11:58:41.881748298Z"
+    description: PyPI compatible server for pip or easy_install.
+    digest: db08d59ee88693805804eb959231bb4f25db1da0010a9fdc435501713cd30064
+    home: https://github.com/pypiserver/pypiserver
+    icon: https://raw.githubusercontent.com/pypiserver/pypiserver/master/pypiserver_logo.png
+    kubeVersion: '>= 1.19.0-0'
+    maintainers:
+    - email: clement@gautier.im
+      name: ClementGautier
+    name: pypiserver
+    sources:
+    - https://github.com/owkin/charts/tree/master/pypiserver
+    - https://github.com/pypiserver/pypiserver
+    - https://pypi.org/project/pypiserver/
+    type: application
+    urls:
+    - pypiserver-3.0.0.tgz
+    version: 3.0.0
   - apiVersion: v1
     appVersion: 1.3.2
-    created: "2021-09-09T08:40:38.171430362Z"
+    created: "2021-09-21T11:58:41.88111289Z"
     description: PyPI compatible server for pip or easy_install.
     digest: 0384b641f00955681247571362da06fde3f2961f8a8db0a408cd5a3a3eecaf6e
     home: https://github.com/pypiserver/pypiserver
@@ -549,7 +569,7 @@ entries:
     version: 2.2.1
   - apiVersion: v1
     appVersion: 1.3.2
-    created: "2021-09-09T08:40:38.170697855Z"
+    created: "2021-09-21T11:58:41.880508182Z"
     description: PyPI compatible server for pip or easy_install.
     digest: 70444981899fbea88cf81b4756c8646d9b8be4217003ef1f4a37fe6668a87117
     home: https://github.com/pypiserver/pypiserver
@@ -567,7 +587,7 @@ entries:
     version: 2.2.0
   - apiVersion: v1
     appVersion: 1.3.2
-    created: "2021-09-09T08:40:38.169906547Z"
+    created: "2021-09-21T11:58:41.879864274Z"
     description: PyPI compatible server for pip or easy_install.
     digest: d08d439ce947bddfaa0180fb8e3befc84011e62865c25a6f7c4d764296f37375
     home: https://github.com/pypiserver/pypiserver
@@ -585,7 +605,7 @@ entries:
     version: 2.1.0
   - apiVersion: v1
     appVersion: 1.3.2
-    created: "2021-09-09T08:40:38.167851227Z"
+    created: "2021-09-21T11:58:41.879239366Z"
     description: PyPI compatible server for pip or easy_install.
     digest: 4fe73b9ff26e960ea5e53a5c87db7523153264f690b4d9f3e8aa78100dfc85e8
     home: https://github.com/pypiserver/pypiserver
@@ -603,7 +623,7 @@ entries:
     version: 2.0.0
   - apiVersion: v1
     appVersion: 1.3.0
-    created: "2021-09-09T08:40:38.166598014Z"
+    created: "2021-09-21T11:58:41.87801545Z"
     description: PyPI compatible server for pip or easy_install.
     digest: 4a63de4332ca6baad84866d06e326300bb447fe31f68161e61828a8d479f5182
     home: https://github.com/pypiserver/pypiserver
@@ -621,7 +641,7 @@ entries:
     version: 1.1.0
   - apiVersion: v1
     appVersion: 1.2.7
-    created: "2021-09-09T08:40:38.165907508Z"
+    created: "2021-09-21T11:58:41.87728334Z"
     description: PyPI compatible server for pip or easy_install.
     digest: 28f1d4bf66925987f5a45997095cff5d6946740ff5f420bdc4388d73f1d28026
     home: https://github.com/pypiserver/pypiserver
@@ -638,7 +658,7 @@ entries:
     version: 1.0.1
   - apiVersion: v1
     appVersion: 1.2.7
-    created: "2021-09-09T08:40:38.165284601Z"
+    created: "2021-09-21T11:58:41.876444529Z"
     description: PyPI compatible server for pip or easy_install.
     digest: e3575a537d7cc0c099b3086a1053d498ed7ff3f53e28666eec82b1a7658ab029
     home: https://github.com/pypiserver/pypiserver
@@ -655,7 +675,7 @@ entries:
     version: 1.0.0
   - apiVersion: v1
     appVersion: 1.2.7
-    created: "2021-09-09T08:40:38.164650695Z"
+    created: "2021-09-21T11:58:41.875928823Z"
     description: PyPI compatible server for pip or easy_install.
     digest: 59a22443adf56357d630f0a78bc5e8e53a1d2a53e8c26e91ad5cc85a6933941d
     home: https://github.com/pypiserver/pypiserver
@@ -670,4 +690,4 @@ entries:
     urls:
     - pypiserver-1.0.0-rc.1.tgz
     version: 1.0.0-rc.1
-generated: "2021-09-09T08:40:38.139269545Z"
+generated: "2021-09-21T11:58:41.854742448Z"
