@@ -15,7 +15,7 @@ spec:
   {{- end }}
   rules:
     {{- if .Values.ingress.hostname }}
-    - host: {{ include "common.tplvalues.render" ( dict "value" .Values.ingress.hostname "context" $ ) }}
+    - host: "TEST" #{{ include "common.tplvalues.render" ( dict "value" .Values.ingress.hostname "context" $ ) }}
       http:
         paths:
           {{- if .Values.ingress.extraPaths }}
@@ -43,7 +43,6 @@ spec:
     {{- end }}
   {{- if .Values.ingress.extraTls }}
   tls:
-   tls:
-    {{- include "common.tplvalues.render" (dict "value" .Values.backend.ingress.extraTls "context" $) | nindent 4 }}
+    {{- include "common.tplvalues.render" (dict "value" .Values.ingress.extraTls "context" $) | nindent 4 }}
   {{- end }}
 {{- end }}
