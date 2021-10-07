@@ -4,8 +4,8 @@ Run the following commands to...
 
 2. Get the application URL:
 {{- if .Values.ingress.enabled }}
-{{- range .Values.ingress.hosts }}
-  http{{ if $.Values.ingress.tls }}s{{ end }}://{{ . }}{{ $.Values.ingress.path }}
+{{- if .Values.ingress.hostname }}
+  http{{ if $.Values.ingress.extraTls }}s{{ end }}://{{ . }}{{ $.Values.ingress.path }}
 {{- end }}
 {{- else if contains "NodePort" .Values.service.type }}
   export NODE_PORT=$(kubectl get --namespace {{ .Release.Namespace }} -o jsonpath="{.spec.ports[0].nodePort}" services {{ include "hlf-ca.fullname" . }})

@@ -253,10 +253,34 @@ data:
          - {{ include "hlf-ca.fullname" . }}.{{ .Release.Namespace }}.svc.cluster.local
          {{- if .Values.ingress.enabled }}
          # Ingresses
-         {{- range .Values.ingress.hosts }}
-         - {{ . }}
+         {{- if .Values.ingress.hostname }}
+            - host: {{ include "common.tplvalues.render" ( dict "value" .Values.backend.ingress.hostname "context" $ ) }}
+              http:
+                paths:
+                  {{- if .Values.backend.ingress.extraPaths }}
+                  {{- toYaml .Values.backend.ingress.extraPaths | nindent 10 }}
+                  {{- end }}
+                  - path: {{ .Values.backend.ingress.path }}
+                    pathType: {{ .Values.backend.ingress.pathType }}
+                    backend:
+                      service:
+                        name: {{ template "substra.server.fullname" . }}
+                        port:
+                          name: http
          {{- end }}
-         {{- end }}
+         {{- range .Values.backend.ingress.extraHosts }}
+          - host: {{ include "common.tplvalues.render" ( dict "value" .name "context" $ ) }}
+            http:
+              paths:
+                - path: {{ default "/" .path }}
+                  pathType: {{ default "ImplementationSpecific" .pathType }}
+                  backend:
+                    service:
+                      name: {{ template "substra.server.fullname" $ }}
+                      port:
+                        name: http
+          {{- end }}
+          {{- end }}
        ca:
           expiry: 131400h
           pathlength: {{ .Values.config.csr.ca.pathlength}}
