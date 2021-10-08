@@ -19,9 +19,8 @@ ingress:
     # certmanager.k8s.io/cluster-issuer: "letsencrypt-staging"
   path: /
   pathType: ImplementationSpecific
-  hosts:
-    - hlf-ca.local
-  tls: []
+  hostname: hlf-ca.local
+  extraTls: []
   #  - secretName: hlf-ca-tls
   #    hosts:
   #      - hlf-ca.local

@@ -78,8 +78,9 @@ The following table lists the configurable parameters of the Hyperledger Fabric 
 | `ingress.enabled`                  | If true, Ingress will be created                 | `false`                                                    |
 | `ingress.annotations`              | Ingress annotations                              | `{}`                                                       |
 | `ingress.path`                     | Ingress path                                     | `/`                                                        |
-| `ingress.hosts`                    | Ingress hostnames                                | `[]`                                                       |
-| `ingress.tls`                      | Ingress TLS configuration                        | `[]`                                                       |
+| `ingress.hostname`                    | Default host for the ingress                                | `hlf-ca.local`                                                       |
+| `ingress.extraHosts`                    | The list of additionnal hostnames to be covered by the ingress                                | `[]`                                                       |
+| `ingress.extraTls`                      | The tls configuration for the ingress hostnames                        | `[]`                                                       |
 | `ingress.ingressClassName`         | Ingress class that will be used for the ingress  | `nil`                                                      |
 | `ingress.pathType`                 | Ingress path type                                | `ImplementationSpecific`                                   |
 | `persistence.existingClaim`        | Name of an existing PVC to use for Fabric CA     | `nil`                                                      |
