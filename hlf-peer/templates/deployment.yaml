@@ -252,22 +252,6 @@ spec:
       nodeSelector:
 {{ toYaml . | indent 8 }}
     {{- end }}
-    {{- with .Values.affinity }}
-      affinity:
-        ## This affinity is required to ensure reasonable ledger access speeds
-        {{- if eq $.Values.peer.databaseType "CouchDB" }}
-        podAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-              - key: release
-                operator: In
-                values:
-                - {{ $.Values.peer.couchdbInstance }}
-            topologyKey: "kubernetes.io/hostname"
-        {{- end }}
-{{ toYaml . | indent 8 }}
-    {{- end }}
     {{- with .Values.tolerations }}
       tolerations:
 {{ toYaml . | indent 8 }}
