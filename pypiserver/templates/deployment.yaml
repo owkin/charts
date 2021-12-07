@@ -25,7 +25,7 @@ spec:
         checksum/secret: {{ include (print $.Template.BasePath "/secret.yaml") . | sha256sum }}
         {{- if .Values.podAnnotations }}
           {{- range $key, $value := .Values.podAnnotations }}
-            {{$key|quote}}: {{$value|quote}}
+        {{ $key | quote }}: {{ $value | quote }}
           {{- end }}
         {{- end }}
     spec:
