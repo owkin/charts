@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Added annotations to services
 
+### Changed
+- Allow initContainer image to get pass through from values.yaml. Useful incase a cluster has no access to public repositories
+
 ## [2.0.1] - 2021-09-09
 
 ### Added
