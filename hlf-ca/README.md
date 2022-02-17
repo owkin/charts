@@ -75,7 +75,7 @@ The following table lists the configurable parameters of the Hyperledger Fabric 
 | `image.pullPolicy`                 | Image pull policy                                | `IfNotPresent`                                             |
 | `service.annotations`              | Annotations for ca service                       | `{}`                                                       |
 | `service.port`                     | TCP port                                         | `7054`                                                     |
-| `service.type`                     | K8S service type exposing ports, e.g. `ClusterIP`| `ClusterIP`                                                |
+| `service.type`                     | K8S service type exposing ports, e.g. `ClusterIP`| `ClusterIP`                                              ZZ  |
 | `ingress.enabled`                  | If true, Ingress will be created                 | `false`                                                    |
 | `ingress.annotations`              | Ingress annotations                              | `{}`                                                       |
 | `ingress.path`                     | Ingress path                                     | `/`                                                        |
