@@ -77,6 +77,7 @@ The following table lists the configurable parameters of the Hyperledger Fabric 
 | `image.tag`                         | `hlf-peer` image tag                                           | `1.4.3`                   |
 | `image.pullPolicy`                  | Image pull policy                                              | `IfNotPresent`            |
 | `image.pullImageSecret`             | Image pull secret name                                         |  `nil`                    |
+| `service.annotations`               | Annotations for peer service                                   | `{}`                      |
 | `service.portRequest`               | TCP port for requests to Peer                                  | `7051`                    |
 | `service.portEvent`                 | TCP port for event service on Peer                             | `7053`                    |
 | `service.portMetrics`               | TCP port for the metrics service on Peer                       | `9443`                    |
@@ -93,6 +94,7 @@ The following table lists the configurable parameters of the Hyperledger Fabric 
 | `logging.ledger`                    | Ledger logging level                                           | `info`                    |
 | `logging.msp`                       | MSP logging level                                              | `warning`                 |
 | `logging.policies`                  | Policies logging level                                         | `warning`                 |
+| `logging.spec`                      | Fabric logging specs                                           | ``                        |
 | `ingress.enabled`                   | If true, Ingress will be created                               | `false`                   |
 | `ingress.annotations`               | Ingress annotations                                            | `{}`                      |
 | `ingress.ingressClassName`          | Ingress class that will be used for the ingress                | `nil`                     |

@@ -90,6 +90,7 @@ The following table lists the configurable parameters of the Hyperledger Fabric 
 | `image.repository`                 | `hlf-ord` image repository                                    | `hyperledger/fabric-orderer`                               |
 | `image.tag`                        | `hlf-ord` image tag                                           | `x86_64-1.1.0`                                             |
 | `image.pullPolicy`                 | Image pull policy                                             | `IfNotPresent`                                             |
+| `service.annotations`              | Annotations for orderer service                               | `{}`                                                       |
 | `service.port`                     | TCP port                                                      | `7050`                                                     |
 | `service.type`                     | K8S service type exposing ports, e.g. `ClusterIP`             | `ClusterIP`                                                |
 | `service.portMetrics`              | TCP port for the metrics service                              | `9443`                                                     |
@@ -106,6 +107,7 @@ The following table lists the configurable parameters of the Hyperledger Fabric 
 | `persistence.storageClass`         | Storage class of backing PVC                                  | `default`                                                  |
 | `ord.type`                         | Type of Orderer (`solo`, `etcdraft` or `kafka`)               | `solo`                                                     |
 | `ord.mspID`                        | ID of MSP the Orderer belongs to                              | `OrdererMSP`                                               |
+| `logging.spec`                     | Fabric logging specs                                          | ``                                                         |
 | `ord.tls.server.enabled`           | Do we enable server-side TLS?                                 | `false`                                                    |
 | `ord.tls.client.enabled`           | Do we enable client-side TLS?                                 | `false`                                                    |
 | `ord.metrics.provider`             | Metrics provider, can be `statsd`, `prometheus` or `disabled` | `disabled`                                                 |

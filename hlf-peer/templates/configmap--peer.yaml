@@ -25,6 +25,7 @@ data:
   ###########
   # Logging #
   ###########
+  FABRIC_LOGGING_SPEC: {{ .Values.logging.spec | quote }}
   CORE_LOGGING_LEVEL: {{ .Values.logging.level | quote }}
   CORE_LOGGING_PEER: {{ .Values.logging.peer | quote }}
   CORE_LOGGING_CAUTHDSL: {{ .Values.logging.cauthdsl | quote }}

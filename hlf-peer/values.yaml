@@ -9,6 +9,7 @@ image:
   # pullImageSecret: docker-config
 
 service:
+  annotations: {}
   # Cluster IP or LoadBalancer
   type: ClusterIP
   portRequest: 7051
@@ -63,6 +64,7 @@ logging:
   ledger: info
   msp: warning
   policies: warning
+  spec: ""
 
 
 ##################################

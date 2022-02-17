@@ -8,6 +8,7 @@ image:
   pullPolicy: IfNotPresent
 
 service:
+  annotations: {}
   # Cluster IP or LoadBalancer
   type: ClusterIP
   port: 7050
@@ -44,6 +45,8 @@ persistence:
   size: 1Gi
   # existingClaim: ""
 
+logging:
+  spec: ""
 ##################################
 ## Orderer configuration options #
 ##################################

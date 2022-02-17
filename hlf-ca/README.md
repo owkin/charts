@@ -73,6 +73,7 @@ The following table lists the configurable parameters of the Hyperledger Fabric 
 | `image.repository`                 | `hlf-ca` image repository                        | `hyperledger/fabric-ca`                                    |
 | `image.tag`                        | `hlf-ca` image tag                               | `1.4.3`                                                    |
 | `image.pullPolicy`                 | Image pull policy                                | `IfNotPresent`                                             |
+| `service.annotations`              | Annotations for ca service                       | `{}`                                                       |
 | `service.port`                     | TCP port                                         | `7054`                                                     |
 | `service.type`                     | K8S service type exposing ports, e.g. `ClusterIP`| `ClusterIP`                                                |
 | `ingress.enabled`                  | If true, Ingress will be created                 | `false`                                                    |

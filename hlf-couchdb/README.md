@@ -71,6 +71,7 @@ The following table lists the configurable parameters of the Hyperledger Fabric 
 | `image.repository`                 | `hlf-couchdb` image repository                   | `hyperledger/fabric-couchdb`                               |
 | `image.tag`                        | `hlf-couchdb` image tag                          | `x86_64-0.4.7`                                             |
 | `image.pullPolicy`                 | Image pull policy                                | `IfNotPresent`                                             |
+| `service.annotations`              | Annotations for couchdb service                  | `{}`                                                       |
 | `service.port`                     | TCP port                                         | `5984`                                                     |
 | `service.type`                     | K8S service type exposing ports, e.g. `ClusterIP`| `ClusterIP`                                                |
 | `persistence.accessMode`           | Use volume as ReadOnly or ReadWrite              | `ReadWriteOnce`                                            |

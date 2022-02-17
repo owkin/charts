@@ -6,8 +6,14 @@ image:
   repository: hyperledger/fabric-ca
   tag: 1.4.3
   pullPolicy: IfNotPresent
+initContainer:
+  image:
+    repository: jwilder/dockerize
+    tag: latest
+    pullPolicy: IfNotPresent
 
 service:
+  annotations: {}
   ## Cluster IP or LoadBalancer
   type: ClusterIP
   port: 7054

@@ -37,7 +37,7 @@ spec:
             name: {{ include "hlf-ca.fullname" . }}--config
       initContainers:
         - name: wait-for-db
-          image: jwilder/dockerize
+          image: "{{ .Values.initContainer.image.repository }}:{{ .Values.initContainer.image.tag }}"
           imagePullPolicy: IfNotPresent
           envFrom:
             - configMapRef:
