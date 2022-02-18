@@ -50,6 +50,8 @@ data:
       certfile: /var/hyperledger/fabric-ca/msp/certs/{{ include "hlf-ca.fullname" . }}-cert.pem
       # Chain file
       chainfile:
+      # Ignore Certificate Expiration in the case of re-enroll
+      reenrollIgnoreCertExpiry: true
     #############################################################################
     #  The gencrl REST endpoint is used to generate a CRL that contains revoked
     #  certificates. This section contains configuration options that are used
