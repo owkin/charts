@@ -38,7 +38,7 @@ spec:
       initContainers:
         - name: wait-for-db
           image: "{{ .Values.initContainer.image.repository }}:{{ .Values.initContainer.image.tag }}"
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: {{ .Values.initContainer.pullPolicy }}
           envFrom:
             - configMapRef:
                 name: {{ include "hlf-ca.fullname" . }}--db
