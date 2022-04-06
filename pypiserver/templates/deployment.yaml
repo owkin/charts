@@ -84,7 +84,7 @@ spec:
       volumes:
         - name: secrets
           secret:
-            secretName: {{ template "pypiserver.fullname" . }}
+            secretName: {{ if .Values.auth.existingSecret }}{{ .Values.auth.existingSecret }}{{- else }}{{ template "pypiserver.fullname" . }}{{- end }}
         - name: packages
         {{- if .Values.persistence.enabled }}
           persistentVolumeClaim:
