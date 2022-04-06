@@ -50,6 +50,7 @@ The following tables lists the configurable parameters of the PyPI server chart 
 | `pypiserver.extraArgs`             | Additional arguments (beside -P, -p, -a) to be passed to the underyling pypiserver image | `[]`                    |
 | `auth.actions`                     | Actions requiring authentication (comma separated list)                                  | `update`                |
 | `auth.credentials`                 | Map of username / encoded password to write in a htpasswd file                           | `{}`                    |
+| `auth.existingSecret`              | Name of externally provided secret with credentials                                      | `""`                    |
 | `ingress.enabled`                  | Ingress configuration flag                                                               | `false`                 |
 | `ingress.ingressClassName`         | Ingress class name                                                                       | `nil`                   |
 | `ingress.labels`                   | Ingress labels                                                                           | `{}`                    |
