@@ -21,6 +21,8 @@ auth:
   ## Map of username / encoded passwords that will be put to the htpasswd file
   ## use `htpasswd -n -b username password` to generate them
   credentials: {}
+  ## Name of externally provided secret with credentials
+  existingSecret: ""
 
 podAnnotations: {}
 
