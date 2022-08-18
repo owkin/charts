@@ -28,6 +28,10 @@ podAnnotations: {}
 
 podLabels: {}
 
+# Timeouts for liveness and readiness probes
+livenessTimeout: 5
+readinessTimeout: 3
+
 ingress:
   enabled: false
   ingressClassName:

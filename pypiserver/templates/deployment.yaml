@@ -70,14 +70,14 @@ spec:
               path: /
               port: http
             initialDelaySeconds: 30
-            timeoutSeconds: 5
+            timeoutSeconds: {{ .Values.livenessTimeout }}
             failureThreshold: 6
           readinessProbe:
             httpGet:
               path: /
               port: http
             initialDelaySeconds: 5
-            timeoutSeconds: 3
+            timeoutSeconds: {{ .Values.readinessTimeout }}
             periodSeconds: 5
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
